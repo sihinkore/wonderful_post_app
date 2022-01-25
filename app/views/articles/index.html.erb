@@ -1,0 +1,9 @@
+<h1>記事一覧</h1>
+
+<div id="articles">
+  <% @articles.each do |article| %>
+    <%= render article %>
+  <% end %>
+</div>
+
+<%= link_to "New article", new_article_path %>
