@@ -3,6 +3,10 @@
 <div id="articles">
   <% @articles.each do |article| %>
     <%= render article %>
+    <p>
+     <%= link_to "Show this article", article %>
+     <%= link_to "Edit this article", edit_article_path(article) %>
+    </p>
   <% end %>
 </div>
 
