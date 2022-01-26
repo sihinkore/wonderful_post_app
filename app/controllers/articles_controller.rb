@@ -40,9 +40,15 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    @article.destroy
+    redirect_to articles_url, notice: "article was successfully destroyed."
   end
 
   private
+  def set_article
+    @article = Article.find(params[:id])
+  end
+
    def article_params
     params.require(:article).permit(:title, :content)
    end
